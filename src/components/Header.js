@@ -5,6 +5,20 @@ import Order from './Order';
 export default function Header(props) { 
 
   let [cartOpen, setCartOpen] = useState(false);
+
+  const showOrders = (props) => {
+   return (props.orders.map(item => (
+      <Order item = {item} key = {item.id}/>
+    )))
+  }
+
+  const showNothing = () => {
+    return (
+      <div className='empty'>
+        <h2>The cart is empty!</h2>
+      </div>
+    )
+  }
   
   return (
     <header>
@@ -19,18 +33,12 @@ export default function Header(props) {
                             className={`shop-cart-button ${cartOpen && 'active' }`}/>
             {cartOpen && (
               <div className='shop-cart'>
-                {/* {props.orders.map(item => (
-                 
-                  <div className='item'>
-                    <img src = {"./img/" + item.img} alt = "furniture"/>
-                    <h2>{item.title}</h2>
-                    <b>$ {item.price}</b>
-                  </div>
-                ))} */}
 
-                {props.orders.map(elem => (
-                  <Order item = {elem} key = {elem.id}/>
-                ))}
+                          {/*   {props.orders.map(elem => (
+                              <Order item = {elem} key = {elem.id}/>
+                            ))} */}
+
+                 { props.orders.length > 0 ? showOrders(props) : showNothing()}
 
               </div>
             )}                
