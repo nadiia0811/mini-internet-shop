@@ -1,13 +1,206 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;700&display=swap');
+
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  background: #fff;
+  color: #222;
+  font-family: 'Montserrat' sans-serif;
+  font-weight: 300;
 }
+
+.wrapper {
+  width: 1100px;
+  margin: 50px auto;
+}
+
+header {
+  position: relative;
+}
+
+header .shop-cart-button {
+  float: right;
+  cursor: pointer;
+  transition: color 300ms ease;
+  width: 20px;
+  height: 20px;
+}
+
+header .shop-cart-button:hover,
+header .shop-cart-button.active {
+  color: #dc3d3d;
+  transform: scale(1.2);
+}
+
+header .shop-cart {
+  position: absolute;
+  margin-top: 30px;
+  right: 0;
+  width: 400px;
+  z-index: 5;
+  background-color: rgba(227, 222, 222, 1);
+  -webkit-box-shadow: 4px 5px 15px -7px #606060; 
+  box-shadow: 4px 5px 15px -7px #606060;
+  transition: transform 500ms ease;
+  padding: 20px;
+  padding-bottom: 0;
+}
+
+header .logo {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+header ul.nav {
+  float: right;
+  list-style: none;
+}
+
+header ul.nav li {
+  font-size: 20px;
+  display: inline;
+  margin-left: 25px;
+  cursor: pointer;
+  transition: opacity 500ms ease;
+}
+
+header ul.nav li:hover {
+  opacity: 0.5;
+}
+
+header .presentation {
+  margin: 50px 0;
+  background: url("./img/big.jpg");
+  width: 100%;
+  height: 500px;
+  background-size: cover;
+  background-position: center center;
+  background-blend-mode: multiply; /*можем наложить цвет на картинку дополнительно*/
+  background-color: #bcbcbc;
+  position: relative;
+}
+
+header .presentation::after {
+  content: 'The best things for your home';
+  position: absolute;
+  top: 100px;
+  left: 50px;
+  width: 300px;
+  font-size: 45px;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 1px 0 1px #000, 
+  0 1px 1px #000, 
+  -1px 0 1px #000, 
+  0 -1px 1px #000;
+}
+
+header .presentation::before {
+  content: 'at low prices';
+  position: absolute;
+  top: 220px;
+  left: 50px;
+  width: 400px;
+  font-size: 20px;
+  font-weight: 300;
+  color: #fff;
+  text-shadow: 1px 0 1px #000, 
+  0 1px 1px #000, 
+  -1px 0 1px #000, 
+  0 -1px 1px #000;
+}
+
+header .shop-cart .item {
+  width: 100%;
+  font-size: 16px;
+  float: left;
+  clear: right;
+  margin-bottom: 15px;
+}
+
+header .shop-cart .item h2 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+header .shop-cart .item b {
+  color: #797979;
+  font-size: 16px;
+}
+
+header .shop-cart .item img {
+  width: 70px;
+  height: 70px;
+  float: left;
+  margin-right: 20px;
+}
+
+main {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+main .item {
+  width: 30%;
+  height: 525px;
+  margin-bottom: 50px;
+  background: #f5f5f5;
+  overflow: hidden;
+}
+
+main .item img {
+  width: 100%;
+  height: 60%; 
+  transition: transform 500ms ease; 
+  
+}
+
+main .item img:hover {
+  transform: scale(1.05);
+}
+
+main h2, main p, main b {
+  margin: 10px 5px;
+}
+
+main p {
+  color: #333;
+  font-size: 17px;
+}
+
+.buy-btn {
+  display: flex;
+  justify-content: center;
+}
+
+.add-to-cart{
+ margin-top: 15px;
+ width: 70px;
+ height: 25px;
+ background-color: #555;
+ color: #fff;
+ border: none;
+ font-weight: 700;
+ cursor: pointer;
+ border-radius: 3px;
+ transition: background-color 400ms ease;
+}
+
+.add-to-cart:hover {
+  background-color: rgb(86, 106, 107);
+}
+
+.item b {
+  font-size: 20px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 100px;
+}
+
