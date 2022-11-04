@@ -143,6 +143,27 @@ header .shop-cart .item img {
   margin-right: 20px;
 }
 
+header .shop-cart .item .delete-icon {
+  float: right;
+  color: #dc3d3d;
+  position: relative;
+  top: -5px;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+}
+
+header .shop-cart .item .delete-icon:hover {
+  color: #333;
+}
+
+header .shop-cart .sum {
+  float: left;
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
 main {
   display: flex;
   width: 100%;
@@ -197,7 +218,7 @@ main p {
 }
 
 .add-to-cart:hover {
-  background-color: rgb(86, 106, 107);
+  background-color: rgb(175, 77, 77);
 }
 
 .item b {

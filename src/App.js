@@ -9,7 +9,7 @@ class App extends React.Component {
    constructor(props){
     super(props);
     this.state = {
-      orders: [], //orders in the cart
+      orders: [], 
       items: [
         {
           id: 1,
@@ -19,7 +19,7 @@ class App extends React.Component {
                  suggests, they slip into the smallest spaces thanks to their 
                  armless design and unassuming size.`,
           category: 'chairs',
-          price: '49.99'
+          price: '50.00'
         },
         {
           id: 2,
@@ -29,7 +29,7 @@ class App extends React.Component {
                 while offering the structural support you demand from 
                 your key furniture pieces. This piece seats up to four in comfort.`,
           category: 'tables',
-          price: '129.99'
+          price: '130.00'
         }, 
         {
           id: 3,
@@ -39,7 +39,7 @@ class App extends React.Component {
                 combines with the seat, back and side cushioning to provide a sumptuously supportive seat 
                 that is perfect for chilling out.`,
           category: 'sofa',
-          price: '249.99'
+          price: '250.00'
         },
         {
           id: 4,
@@ -49,7 +49,7 @@ class App extends React.Component {
                  a long day, a chair & ottoman set is perfect for you. 
                  Find comfortable and easygoing styles for your space.`,
           category: 'chairs',
-          price: '49.99'
+          price: '50.00'
         },
         {
           id: 5,
@@ -59,7 +59,7 @@ class App extends React.Component {
                  and vibrant Sofa Norton range. Fully modular, this admirable
                  range is essentially a blank canvas waiting for you to get creative.`,
           category: 'sofa',
-          price: '249.99'
+          price: '250.00'
         },
         {
           id: 6,
@@ -69,20 +69,41 @@ class App extends React.Component {
                  important step towards the use of more environmentally 
                  friendly goods. The new fibre is synthetic, in 100 % recycled.`,
           category: 'sofa',
-          price: '149.99'
+          price: '150.00'
         }
       ]
     }
     this.addToOrder = this.addToOrder.bind(this);
+    this.deleteOrder = this.deleteOrder.bind(this);
   }
   
   addToOrder(item) {
+    let isInArray = false;
+    this.state.orders.forEach(element => {
+      if(element.id === item.id) {
+        isInArray = true;
+      }
+    });
+    if(!isInArray) {
     this.setState({orders: [...this.state.orders, item]})
+   }
   }
+
+
+
+  deleteOrder(item) {
+    this.setState({orders: this.state.orders.filter(elem => elem.id !== item.id)});
+  } 
+
+
+
+
+
+
   render(){
   return (
     <div className="wrapper">
-      <Header orders={this.state.orders}/>
+      <Header orders={this.state.orders} deleteOrder = {this.deleteOrder}/> 
       <Items items = {this.state.items}
              onAdd = {this.addToOrder}/>
       <Footer />

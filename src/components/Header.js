@@ -7,9 +7,16 @@ export default function Header(props) {
   let [cartOpen, setCartOpen] = useState(false);
 
   const showOrders = (props) => {
-   return (props.orders.map(item => (
-      <Order item = {item} key = {item.id}/>
-    )))
+    let sum = 0;
+    props.orders.forEach(elem => sum += Number.parseFloat(elem.price));
+
+   return (
+   <div>
+      {props.orders.map(item => (
+        <Order item = {item} key = {item.id} deleteOrder = {props.deleteOrder}/>
+      ))}
+      <p className='sum'> Sum: $ {sum.toFixed(2)}</p>   
+    </div>)
   }
 
   const showNothing = () => {
@@ -33,13 +40,7 @@ export default function Header(props) {
                             className={`shop-cart-button ${cartOpen && 'active' }`}/>
             {cartOpen && (
               <div className='shop-cart'>
-
-                          {/*   {props.orders.map(elem => (
-                              <Order item = {elem} key = {elem.id}/>
-                            ))} */}
-
                  { props.orders.length > 0 ? showOrders(props) : showNothing()}
-
               </div>
             )}                
             <div className='presentation'></div>
