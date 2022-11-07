@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Items from "./components/Items";
+import Categories from "./components/Categories";
 
 
 
@@ -10,6 +11,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       orders: [], 
+      currentItems: [],
       items: [
         {
           id: 1,
@@ -38,7 +40,7 @@ class App extends React.Component {
           desc: `Beautifully soft deep blue fabric covers the entire piece and 
                 combines with the seat, back and side cushioning to provide a sumptuously supportive seat 
                 that is perfect for chilling out.`,
-          category: 'sofa',
+          category: 'sofas',
           price: '250.00'
         },
         {
@@ -58,7 +60,7 @@ class App extends React.Component {
           desc: `Reinvigorate your living room interior with the sleek 
                  and vibrant Sofa Norton range. Fully modular, this admirable
                  range is essentially a blank canvas waiting for you to get creative.`,
-          category: 'sofa',
+          category: 'sofas',
           price: '250.00'
         },
         {
@@ -68,13 +70,15 @@ class App extends React.Component {
           desc: `Exclusively for the Paul sofa system, the project marks an
                  important step towards the use of more environmentally 
                  friendly goods. The new fibre is synthetic, in 100 % recycled.`,
-          category: 'sofa',
+          category: 'sofas',
           price: '150.00'
         }
       ]
     }
     this.addToOrder = this.addToOrder.bind(this);
     this.deleteOrder = this.deleteOrder.bind(this);
+    this.showCategory = this.showCategory.bind(this);
+    this.state.currentItems = this.state.items;
   }
   
   addToOrder(item) {
@@ -89,22 +93,28 @@ class App extends React.Component {
    }
   }
 
-
-
   deleteOrder(item) {
     this.setState({orders: this.state.orders.filter(elem => elem.id !== item.id)});
-  } 
-
-
-
-
+  }
+  
+  showCategory(category) {
+    if(category === 'all') {
+      this.setState({currentItems: this.state.items});
+      return;
+    }
+    this.setState({
+      currentItems: this.state.items.filter(elem => elem.category === category)
+    })
+  }
 
 
   render(){
   return (
     <div className="wrapper">
-      <Header orders={this.state.orders} deleteOrder = {this.deleteOrder}/> 
-      <Items items = {this.state.items}
+      <Header orders={this.state.orders} 
+              deleteOrder = {this.deleteOrder}/> 
+      <Categories showCategory = {this.showCategory}/>
+      <Items items = {this.state.currentItems}
              onAdd = {this.addToOrder}/>
       <Footer />
     </div>
