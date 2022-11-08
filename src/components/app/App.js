@@ -1,11 +1,10 @@
 import React from "react";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import Items from "./components/Items";
-import Categories from "./components/Categories";
-import ShowFullItem from "./components/ShowFullItem";
-
-
+import Header from "../header/Header";
+import Footer from "../footer/Footer";
+import Items from "../items/Items";
+import Categories from "../categories/Categories";
+import ShowFullItem from "../showFullItem/ShowFullItem";
+import './app.css';
 
 class App extends React.Component {
    constructor(props){
@@ -39,8 +38,8 @@ class App extends React.Component {
         {
           id: 3,
           title: 'Sofa Kasper',
-          img: 'sofa kasper.jpg',
-          desc: `Beautifully soft deep blue fabric covers the entire piece and 
+          img: 'sofa Kasper.jpg',
+          desc: `Beautifully soft deep pastel fabric covers the entire piece and 
                 combines with the seat, back and side cushioning to provide a sumptuously supportive seat 
                 that is perfect for chilling out.`,
           category: 'sofas',
@@ -49,7 +48,7 @@ class App extends React.Component {
         {
           id: 4,
           title: 'Leather Comfy Chair',
-          img: 'chair.jpg',
+          img: 'chair.webp',
           desc: `If you’re looking to enjoy some quiet time at the end of 
                  a long day, a chair & ottoman set is perfect for you. 
                  Find comfortable and easygoing styles for your space.`,
@@ -69,7 +68,7 @@ class App extends React.Component {
         {
           id: 6,
           title: 'Sofa Paul',
-          img: 'sofa paul.jpg',
+          img: 'sofa Paul.jpeg',
           desc: `Exclusively for the Paul sofa system, the project marks an
                  important step towards the use of more environmentally 
                  friendly goods. The new fibre is synthetic, in 100 % recycled.`,

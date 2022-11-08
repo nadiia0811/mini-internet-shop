@@ -12,7 +12,7 @@ class Order extends Component {
             <b>$ {price}</b>
             <FaTrash className='delete-icon'
                      onClick = {() => this.props.deleteOrder(this.props.item)}/>
-         </div>
+        </div>
       
     )
   }

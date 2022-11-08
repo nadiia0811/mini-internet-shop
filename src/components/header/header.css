@@ -1,0 +1,146 @@
+header {
+    position: relative;
+  }
+  
+  header .shop-cart-button {
+    float: right;
+    cursor: pointer;
+    transition: color 300ms ease;
+    width: 20px;
+    height: 20px;
+  }
+  
+  header .shop-cart-button:hover,
+  header .shop-cart-button.active {
+    color: #dc3d3d;
+    transform: scale(1.2);
+  }
+  
+  header .shop-cart {
+    position: absolute;
+    margin-top: 30px;
+    right: 0;
+    width: 400px;
+    z-index: 5;
+    background-color: rgba(227, 222, 222, 1);
+    -webkit-box-shadow: 4px 5px 15px -7px #606060; 
+    box-shadow: 4px 5px 15px -7px #606060;
+    transition: transform 500ms ease;
+    padding: 20px;
+    padding-bottom: 0;
+  }
+  
+  header .shop-cart .empty h2{
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  
+  header .logo {
+    font-weight: 600;
+    font-size: 20px;
+  }
+  
+  header ul.nav {
+    float: right;
+    list-style: none;
+  }
+  
+  header ul.nav li {
+    font-size: 20px;
+    display: inline;
+    margin-left: 25px;
+    cursor: pointer;
+    transition: opacity 500ms ease;
+  }
+  
+  header ul.nav li:hover {
+    opacity: 0.5;
+  }
+  
+  header .presentation {
+    margin: 50px 0;
+    background: url("../../../src/img/big.jpg");
+    width: 100%;
+    height: 500px;
+    background-size: cover;
+    background-position: center center;
+    background-blend-mode: multiply; /*можем наложить цвет на картинку дополнительно*/
+    background-color: #bcbcbc;
+    position: relative;
+  }
+  
+  header .presentation::after {
+    content: 'The best things for your home';
+    position: absolute;
+    top: 100px;
+    left: 50px;
+    width: 300px;
+    font-size: 45px;
+    font-weight: 600;
+    color: #fff;
+    text-shadow: 1px 0 1px #000, 
+    0 1px 1px #000, 
+    -1px 0 1px #000, 
+    0 -1px 1px #000;
+  }
+  
+  header .presentation::before {
+    content: 'at low prices';
+    position: absolute;
+    top: 220px;
+    left: 50px;
+    width: 400px;
+    font-size: 20px;
+    font-weight: 300;
+    color: #fff;
+    text-shadow: 1px 0 1px #000, 
+    0 1px 1px #000, 
+    -1px 0 1px #000, 
+    0 -1px 1px #000;
+  }
+  
+  header .shop-cart .item {
+    width: 100%;
+    font-size: 16px;
+    float: left;
+    clear: right;
+    margin-bottom: 15px;
+  }
+  
+  header .shop-cart .item h2 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  header .shop-cart .item b {
+    color: #797979;
+    font-size: 16px;
+  }
+  
+  header .shop-cart .item img {
+    width: 70px;
+    height: 70px;
+    float: left;
+    margin-right: 20px;
+  }
+  
+  header .shop-cart .item .delete-icon {
+    float: right;
+    color: #dc3d3d;
+    position: relative;
+    top: -5px;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+  }
+  
+  header .shop-cart .item .delete-icon:hover {
+    color: #333;
+  }
+  
+  header .shop-cart .sum {
+    float: left;
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }

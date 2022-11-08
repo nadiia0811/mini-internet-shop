@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;700&display=swap');
+/**@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;700&display=swap');
 
 *{
   margin: 0;
@@ -15,9 +15,9 @@ body {
 .wrapper {
   width: 1100px;
   margin: 50px auto;
-}
+}*/
 
-header {
+/**header {
   position: relative;
 }
 
@@ -83,7 +83,7 @@ header .presentation {
   height: 500px;
   background-size: cover;
   background-position: center center;
-  background-blend-mode: multiply; /*можем наложить цвет на картинку дополнительно*/
+  background-blend-mode: multiply; 
   background-color: #bcbcbc;
   position: relative;
 }
@@ -162,9 +162,9 @@ header .shop-cart .sum {
   font-weight: 700;
   font-size: 20px;
   margin-bottom: 10px;
-}
+}*/
 
-.categories div {
+/**.categories div {
   width: 80px;
   text-align: center;
   display: inline-block;
@@ -184,9 +184,9 @@ header .shop-cart .sum {
   border-color: silver;
   transform: scale(1.1);
   
-}
+} */
 
-main {
+/**main {
   display: flex;
   width: 100%;
   flex-wrap: wrap;
@@ -252,14 +252,14 @@ main p {
 
 .item b {
   font-size: 20px;
-}
+}*/
 
-footer {
+/**footer {
   text-align: center;
   margin-top: 100px;
-}
+}*/
 
-.full-item {
+/**.full-item {
   position: fixed;
   top: 0;
   right: 0;
@@ -283,5 +283,5 @@ footer {
 .full-item > div img {
   height: 75%;
   object-fit: cover;
-}
+}*/
 

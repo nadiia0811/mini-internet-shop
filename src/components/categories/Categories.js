@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './categories.css';
 
 export class Categories extends Component {
     constructor(props){

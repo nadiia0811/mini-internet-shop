@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {FaShoppingCart} from 'react-icons/fa';
-import Order from './Order';
+import Order from '../order/Order';
+import './header.css';
 
 export default function Header(props) { 
 
