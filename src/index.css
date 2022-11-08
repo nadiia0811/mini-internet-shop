@@ -271,16 +271,17 @@ footer {
 }
 
 .full-item > div {
-  width: 400px;
+  width: 500px;
   height: 600px;
   position: relative;
-  margin: 10% auto;
+  margin: 5% auto;
   padding: 40px 30px;
   background: #fff;
   border-radius: 9px;
 }
 
 .full-item > div img {
-  object-fit: inherit;
+  height: 75%;
+  object-fit: cover;
 }
 

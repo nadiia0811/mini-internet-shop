@@ -18,8 +18,8 @@ class App extends React.Component {
       items: [
         {
           id: 1,
-          title: 'Grey chair',
-          img: 'grey chair.jpg',
+          title: 'Grey office chair',
+          img: 'grey office chair.jpeg',
           desc: `Slipper chairs are design perfection. Just as their name
                  suggests, they slip into the smallest spaces thanks to their 
                  armless design and unassuming size.`,
@@ -29,7 +29,7 @@ class App extends React.Component {
         {
           id: 2,
           title: 'Esteem Wooden Table',
-          img: 'table.webp',
+          img: 'wood table.jpg',
           desc: `Simple and sturdy, this beautiful table seats up to four 
                 while offering the structural support you demand from 
                 your key furniture pieces. This piece seats up to four in comfort.`,
