@@ -6,7 +6,9 @@ class Item extends Component {
     const {img, title, desc, price} = this.props.item;
     return (
       <div className='item'>
-           <img src = {"./img/" + img} alt = "furniture"/>
+           <img src = {"./img/" + img} 
+                alt = "furniture"
+                onClick = {() => this.props.onShowItem(this.props.item)}/>
            <h2>{title}</h2>
            <p>{desc}</p>
            <b>$ {price}</b>

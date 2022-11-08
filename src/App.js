@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Items from "./components/Items";
 import Categories from "./components/Categories";
+import ShowFullItem from "./components/ShowFullItem";
 
 
 
@@ -11,6 +12,8 @@ class App extends React.Component {
     super(props);
     this.state = {
       orders: [], 
+      showFullItem: false,
+      fullItem: {},
       currentItems: [],
       items: [
         {
@@ -36,7 +39,7 @@ class App extends React.Component {
         {
           id: 3,
           title: 'Sofa Kasper',
-          img: 'sofa3.webp',
+          img: 'sofa kasper.jpg',
           desc: `Beautifully soft deep blue fabric covers the entire piece and 
                 combines with the seat, back and side cushioning to provide a sumptuously supportive seat 
                 that is perfect for chilling out.`,
@@ -51,12 +54,12 @@ class App extends React.Component {
                  a long day, a chair & ottoman set is perfect for you. 
                  Find comfortable and easygoing styles for your space.`,
           category: 'chairs',
-          price: '50.00'
+          price: '80.00'
         },
         {
           id: 5,
           title: 'Sofa Norton',
-          img: 'sofa4.webp',
+          img: 'sofa norton.webp',
           desc: `Reinvigorate your living room interior with the sleek 
                  and vibrant Sofa Norton range. Fully modular, this admirable
                  range is essentially a blank canvas waiting for you to get creative.`,
@@ -66,7 +69,7 @@ class App extends React.Component {
         {
           id: 6,
           title: 'Sofa Paul',
-          img: 'sofa5.jpg',
+          img: 'sofa paul.jpg',
           desc: `Exclusively for the Paul sofa system, the project marks an
                  important step towards the use of more environmentally 
                  friendly goods. The new fibre is synthetic, in 100 % recycled.`,
@@ -79,6 +82,7 @@ class App extends React.Component {
     this.deleteOrder = this.deleteOrder.bind(this);
     this.showCategory = this.showCategory.bind(this);
     this.state.currentItems = this.state.items;
+    this.onShowItem = this.onShowItem.bind(this);
   }
   
   addToOrder(item) {
@@ -107,6 +111,11 @@ class App extends React.Component {
     })
   }
 
+  onShowItem(item) {
+    this.setState({fullItem: item});
+    this.setState({showFullItem: !this.state.showFullItem})
+  }
+
 
   render(){
   return (
@@ -115,7 +124,12 @@ class App extends React.Component {
               deleteOrder = {this.deleteOrder}/> 
       <Categories showCategory = {this.showCategory}/>
       <Items items = {this.state.currentItems}
-             onAdd = {this.addToOrder}/>
+             onAdd = {this.addToOrder}
+             onShowItem = {this.onShowItem}/>
+
+      {this.state.showFullItem && <ShowFullItem item = {this.state.fullItem}
+                                                onAdd = {this.addToOrder}
+                                                onShowItem = {this.onShowItem}/>}       
       <Footer />
     </div>
   );

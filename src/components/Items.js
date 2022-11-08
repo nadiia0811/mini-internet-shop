@@ -9,7 +9,8 @@ import Item from './Item';
         {this.props.items.map(item => (
             <Item key = {item.id} 
                   item = {item}
-                  onAdd = {this.props.onAdd}/>
+                  onAdd = {this.props.onAdd}
+                  onShowItem = {this.props.onShowItem}/>
         ))}
        </main> 
     )
