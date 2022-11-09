@@ -32,8 +32,8 @@ export default function Header(props) {
     <header>
         <div>
             <span className='logo'>House Staff</span>
-            <ul className='nav'>
-              <li>About us</li>
+            <ul className='nav' >
+              <li onClick={ props.showInformation}>About us</li>
               <li>Contacts</li>
               <li>Cabinet</li>
             </ul>

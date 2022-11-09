@@ -4,12 +4,15 @@ import Footer from "../footer/Footer";
 import Items from "../items/Items";
 import Categories from "../categories/Categories";
 import ShowFullItem from "../showFullItem/ShowFullItem";
+import AboutUs from '../about us/About-us';
 import './app.css';
 
 class App extends React.Component {
    constructor(props){
     super(props);
     this.state = {
+      isAboutUsClicked: false,
+
       orders: [], 
       showFullItem: false,
       fullItem: {},
@@ -58,7 +61,7 @@ class App extends React.Component {
         {
           id: 5,
           title: 'Sofa Norton',
-          img: 'sofa norton.webp',
+          img: 'sofa Norton.webp',
           desc: `Reinvigorate your living room interior with the sleek 
                  and vibrant Sofa Norton range. Fully modular, this admirable
                  range is essentially a blank canvas waiting for you to get creative.`,
@@ -82,6 +85,9 @@ class App extends React.Component {
     this.showCategory = this.showCategory.bind(this);
     this.state.currentItems = this.state.items;
     this.onShowItem = this.onShowItem.bind(this);
+
+    this.showInformation = this.showInformation.bind(this); //
+    this.closeWindow = this.closeWindow.bind(this);
   }
   
   addToOrder(item) {
@@ -115,12 +121,21 @@ class App extends React.Component {
     this.setState({showFullItem: !this.state.showFullItem})
   }
 
+  showInformation() {
+    this.setState({isAboutUsClicked: true});
+  }
+
+  closeWindow() {
+    this.setState({isAboutUsClicked: false});
+  }  
+
 
   render(){
   return (
     <div className="wrapper">
       <Header orders={this.state.orders} 
-              deleteOrder = {this.deleteOrder}/> 
+              deleteOrder = {this.deleteOrder}
+              showInformation = {this.showInformation}/> 
       <Categories showCategory = {this.showCategory}/>
       <Items items = {this.state.currentItems}
              onAdd = {this.addToOrder}
@@ -128,7 +143,9 @@ class App extends React.Component {
 
       {this.state.showFullItem && <ShowFullItem item = {this.state.fullItem}
                                                 onAdd = {this.addToOrder}
-                                                onShowItem = {this.onShowItem}/>}       
+                                                onShowItem = {this.onShowItem}/>} 
+
+      {this.state.isAboutUsClicked ? <AboutUs closeWindow = {this.closeWindow}/> : null}                                                 
       <Footer />
     </div>
   );
