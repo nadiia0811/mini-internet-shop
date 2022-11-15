@@ -12,7 +12,6 @@ class App extends React.Component {
     super(props);
     this.state = {
       isAboutUsClicked: false,
-
       orders: [], 
       showFullItem: false,
       fullItem: {},
@@ -85,8 +84,7 @@ class App extends React.Component {
     this.showCategory = this.showCategory.bind(this);
     this.state.currentItems = this.state.items;
     this.onShowItem = this.onShowItem.bind(this);
-
-    this.showInformation = this.showInformation.bind(this); //
+    this.showInformation = this.showInformation.bind(this); 
     this.closeWindow = this.closeWindow.bind(this);
   }
   

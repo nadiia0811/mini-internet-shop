@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './categories.css';
 
-export class Categories extends Component {
+class Categories extends Component {
     constructor(props){
         super(props);
 

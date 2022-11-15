@@ -3,7 +3,7 @@ import {FaShoppingCart} from 'react-icons/fa';
 import Order from '../order/Order';
 import './header.css';
 
-export default function Header(props) { 
+function Header(props) { 
 
   let [cartOpen, setCartOpen] = useState(false);
 
@@ -14,9 +14,11 @@ export default function Header(props) {
    return (
    <div>
       {props.orders.map(item => (
-        <Order item = {item} key = {item.id} deleteOrder = {props.deleteOrder}/>
+        <Order item = {item} 
+               key = {item.id} 
+               deleteOrder = {props.deleteOrder}/>
       ))}
-      <p className='sum'> Sum: $ {sum.toFixed(2)}</p>   
+      <p className = 'sum'> Sum: $ {sum.toFixed(2)}</p>   
     </div>)
   }
 
@@ -33,15 +35,15 @@ export default function Header(props) {
         <div>
             <span className='logo'>House Staff</span>
             <ul className='nav' >
-              <li onClick={ props.showInformation}>About us</li>
-              <li>Contacts</li>
+              <li onClick={ props.showInformation }>About us</li>
+              <li><a href = "#contacts">Contacts</a></li> 
               <li>Cabinet</li>
             </ul>
             <FaShoppingCart onClick = {() => setCartOpen(cartOpen = !cartOpen)} 
                             className={`shop-cart-button ${cartOpen && 'active' }`}/>
             {cartOpen && (
               <div className='shop-cart'>
-                 { props.orders.length > 0 ? showOrders(props) : showNothing()}
+                 { props.orders.length > 0 ? showOrders(props) : showNothing() }
               </div>
             )}                
             <div className='presentation'></div>
@@ -49,3 +51,5 @@ export default function Header(props) {
     </header>
   )
 }
+
+export default Header;
