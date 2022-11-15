@@ -1,1 +1,1 @@
-# mini-internet-shop
+This small internet shop contains class and functional React components. You can filter products by category. By clicking on the product image, you can enlarge it. If you want to close the modal window - just click on the picture again. When you click on the buy button, the product is added to the cart. To open or close the cart, click on it on the bar at the top.
